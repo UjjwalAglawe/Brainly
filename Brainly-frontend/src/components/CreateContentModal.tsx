@@ -2,9 +2,10 @@ import { useRef, useState } from "react";
 import { CrossIcon } from "../icons/CrossIcon";
 import { Button } from "./Button";
 import { Input } from "./Input";
-import { BACKEND_URL } from "../config";
+// import { BACKEND_URL } from "../config";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+const BACKEND_URL2 = import.meta.env.VITE_BACKEND_URL;
 
 // link:String,
 //     type:String,
@@ -27,7 +28,7 @@ export function CreateContentModal({ open, onClose }:any) {
         const link=linkRef.current?.value;
         console.log("link=",link," title=",title);
         
-        await axios.post(`${BACKEND_URL}/api/v1/content`,{
+        await axios.post(`${BACKEND_URL2}/api/v1/content`,{
             link,
             type,
             title
