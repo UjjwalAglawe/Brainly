@@ -28,7 +28,7 @@ export function Signin() {
             const response = await axios.post(`${BACKEND_URL2}/api/v1/signin`, {
                 username,
                 password,
-            });
+            },{{ withCredentials: true }});
             const jwt = response.data.token;
             console.log(jwt);
             localStorage.setItem("token", jwt);
