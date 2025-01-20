@@ -15,7 +15,11 @@ console.log
 
 const JWT_SECRET2=process.env.JWT_SECRET!;
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:['https://brainly-frontend-pi.vercel.app/'],
+    methods:["POST","GET","DELETE"],
+    credentials:true
+}));
 
 app.post("/api/v1/signin", async (req, res) => {
     const schema = z.object({
