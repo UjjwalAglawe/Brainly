@@ -16,9 +16,8 @@ const app = express();
 const JWT_SECRET2=process.env.JWT_SECRET!;
 app.use(express.json());
 app.use(cors({
-    origin:['https://brainly-frontend-pi.vercel.app'],
+    origin:['https://brainly-73hz.vercel.app/'],
     methods:["POST","GET","DELETE"],
-    credentials:true
 }));
 
 app.options('*', cors());
