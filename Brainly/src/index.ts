@@ -10,7 +10,7 @@ import cors from "cors";
 
 dotenv.config();
 const app = express();
-console.log
+
 
 
 const JWT_SECRET2=process.env.JWT_SECRET!;
@@ -20,6 +20,8 @@ app.use(cors({
     methods:["POST","GET","DELETE"],
     credentials:true
 }));
+
+app.options('*', cors());
 
 app.post("/api/v1/signin", async (req, res) => {
     const schema = z.object({
