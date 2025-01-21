@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(cors({
     origin:['https://brainly-73hz.vercel.app/'],
     methods:["POST","GET","DELETE"],
+    credentials:true,
 }));
 
 app.options('*', cors());
