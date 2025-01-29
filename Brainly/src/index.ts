@@ -286,4 +286,7 @@ app.get("/api/v1/brain/share/:shareLink", async (req, res) => {
 })
 
 app.options('*', cors());
-app.listen(3000);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

@@ -240,4 +240,7 @@ app.get("/api/v1/brain/share/:shareLink", (req, res) => __awaiter(void 0, void 0
     });
 }));
 app.options('*', (0, cors_1.default)());
-app.listen(3000);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
