@@ -23,10 +23,14 @@ const utils_1 = require("./utils");
 const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-console.log;
 const JWT_SECRET2 = process.env.JWT_SECRET;
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ['https://brainly-73hz.vercel.app'],
+    methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
 app.post("/api/v1/signin", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const schema = zod_1.z.object({
         username: zod_1.z.string(),
@@ -235,4 +239,5 @@ app.get("/api/v1/brain/share/:shareLink", (req, res) => __awaiter(void 0, void 0
         content: content
     });
 }));
+app.options('*', (0, cors_1.default)());
 app.listen(3000);
