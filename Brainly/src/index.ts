@@ -1,6 +1,6 @@
 import express from "express";
 import { z } from "zod";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { ContentModel, LinkModel, userModel } from "./db";
 import jwt from 'jsonwebtoken';
 import dotenv from "dotenv";

@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const zod_1 = require("zod");
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const db_1 = require("./db");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const dotenv_1 = __importDefault(require("dotenv"));
@@ -58,7 +58,7 @@ app.post("/api/v1/signin", (req, res) => __awaiter(void 0, void 0, void 0, funct
         });
         return;
     }
-    const passwordMatch = yield bcrypt_1.default.compare(password, user.password);
+    const passwordMatch = yield bcryptjs_1.default.compare(password, user.password);
     if (passwordMatch) {
         const token = jsonwebtoken_1.default.sign({
             id: user._id.toString(),
@@ -87,7 +87,7 @@ app.post("/api/v1/signup", (req, res) => __awaiter(void 0, void 0, void 0, funct
     const username = req.body.username;
     const password = req.body.password;
     try {
-        const hashedPassword = yield bcrypt_1.default.hash(password, 4);
+        const hashedPassword = yield bcryptjs_1.default.hash(password, 4);
         yield db_1.userModel.create({
             username: username,
             password: hashedPassword,
