@@ -239,7 +239,10 @@ app.get("/api/v1/brain/share/:shareLink", (req, res) => __awaiter(void 0, void 0
         content: content
     });
 }));
-app.options('*', (0, cors_1.default)());
+app.options('*', (req, res) => {
+    console.log('Preflight request received');
+    res.sendStatus(200);
+});
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
