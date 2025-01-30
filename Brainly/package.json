@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "stage": "npm run build && npm run start",
-    "vercel-build": "npm run build"
+    "stage": "npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
