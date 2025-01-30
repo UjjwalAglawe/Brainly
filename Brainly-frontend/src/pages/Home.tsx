@@ -15,7 +15,7 @@ export function Home() {
         </p>
 
         <Button
-          onClick={() => navigate("/signup")}
+          onClick={() => navigate("/signin")}
           size="md"
           variant="primary"
           text="Sign in to Get Started"
