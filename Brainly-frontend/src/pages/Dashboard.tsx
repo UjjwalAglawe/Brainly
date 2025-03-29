@@ -94,7 +94,7 @@ function Dashboard() {
               }
             });
             console.log(response.data.hash);
-            const shareUrl=`http://localhost:5173/share/${response.data.hash}`
+            const shareUrl=`{${BACKEND_URL2}}/share/${response.data.hash}`
             await navigator.clipboard.writeText(shareUrl);
             toast.success("Share URL copied to clipboard!");
  
