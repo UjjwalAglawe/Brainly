@@ -96,7 +96,7 @@ function Dashboard() {
               }
             });
             console.log(response.data.hash);
-            const shareUrl=`${FRONT_END_URL}/share/${response.data.hash}`
+            const shareUrl=`${FRONT_END_URL2}/share/${response.data.hash}`
             console.log("Share URL",shareUrl);
             
             await navigator.clipboard.writeText(shareUrl);
