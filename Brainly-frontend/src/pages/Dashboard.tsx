@@ -20,7 +20,9 @@ function Dashboard() {
   console.log("Baas");
   
   const BACKEND_URL2 = import.meta.env.VITE_BACKEND_URL;
+  const FRONT_END_URL2 = import.meta.env.FRONT_END_URL || "https://brainly-qa7k.vercel.app";
   console.log("Backend URL:", BACKEND_URL2);
+  console.log("FROTNEND URL:", FRONT_END_URL2);
   
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token')); // Track login state
@@ -94,7 +96,9 @@ function Dashboard() {
               }
             });
             console.log(response.data.hash);
-            const shareUrl=`${BACKEND_URL2}/share/${response.data.hash}`
+            const shareUrl=`${FRONT_END_URL}/share/${response.data.hash}`
+            console.log("Share URL",shareUrl);
+            
             await navigator.clipboard.writeText(shareUrl);
             toast.success("Share URL copied to clipboard!");
  

@@ -19,7 +19,8 @@ export const Share = () => {
   // console.log("Contetns are", content);
   const { shareid } = useParams();
   const hash = shareid;
-
+  console.log("This is ",hash);
+  
   const [content, setContent] = useState([]);
 
 
