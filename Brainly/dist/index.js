@@ -25,11 +25,16 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const JWT_SECRET2 = process.env.JWT_SECRET;
 app.use(express_1.default.json());
+// app.use(cors({
+//     origin: ['https://brainly-73hz.vercel.app'],
+//     methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//     credentials: true
+// }));
 app.use((0, cors_1.default)({
-    origin: ['https://brainly-73hz.vercel.app'],
+    origin: '*',
     methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
 }));
 app.post("/api/v1/signin", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const schema = zod_1.z.object({
