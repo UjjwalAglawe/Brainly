@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ reference, plac
             <input
                 type="text"
                 ref={reference || ref} 
-                className="px-4 py-2 border rounded m-2"
+                className="w-full px-4 py-3 text-lg border rounded-lg m-2"
                 placeholder={placeholder}
             />
         </div>

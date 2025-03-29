@@ -36,6 +36,11 @@ app.use((0, cors_1.default)({
     methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.post("/test", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.status(200).json({
+        message: "Hello, Brainly!"
+    });
+}));
 app.post("/api/v1/signin", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const schema = zod_1.z.object({
         username: zod_1.z.string(),

@@ -29,7 +29,11 @@ app.use(cors({
 }));
 
 
-
+app.post("/test",async (req,res)=>{
+    res.status(200).json({
+        message:"Hello, Brainly!"
+    })
+})
 
 app.post("/api/v1/signin", async (req, res) => {
     const schema = z.object({
